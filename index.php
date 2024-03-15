@@ -12,7 +12,7 @@ session_destroy();
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/sehlogo.png">
+        <link rel="shortcut icon" href="assets/images/mflogo.png">
 
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -48,12 +48,12 @@ session_destroy();
                                     <form class="form-horizontal auth-form my-4" action="helpers/sindex.php" method="post" autocomplete="off">
             
                                         <div class="form-group">
-                                            <label for="staff_id" class="text-soft-dark"><b>Voter ID Number</b></label>
+                                            
                                             <div class="input-group mb-3">
                                                 <span class="auth-form-icon">
                                                     <i class="dripicons-user"></i> 
                                                 </span>
-                                                <input type="text" class="form-control" id="staff_id" name="staff_id" minlength="3" maxlength="15" placeholder="Type here..." required >
+                                                <input type="text" class="form-control" id="staff_id" name="voter_id" minlength="3" maxlength="15" placeholder="Type voter ID number here..." required >
                                             </div>                                    
                                         </div><!--end form-group--> 
             
@@ -61,7 +61,7 @@ session_destroy();
                                         
                                         <div class="form-group mb-0 row">
                                             <div class="col-12 mt-2">
-                                                <button class="btn btn-gradient-primary btn-round btn-block waves-effect waves-light" name="submit" type="submit">Submit Now <i class="fas fa-sign-in-alt ml-1"></i></button>
+                                                <button class="btn btn-gradient-primary btn-round btn-block waves-effect waves-light" name="submit" type="submit">Proceed Now <i class="fas fa-sign-in-alt ml-1"></i></button>
                                             </div><!--end col--> 
                                         </div> <!--end form-group-->
                                        
