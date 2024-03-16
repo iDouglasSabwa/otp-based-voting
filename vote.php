@@ -61,49 +61,49 @@ $id_number = $_SESSION['id_number'];
             
                                         <div class="form-group bootstrap-select-1">
                                             <label for="useremail"><b>President</b></label>
-                                            <select class="custom-select" name="department" id="department" >
-                                                <option selected="">Select from list...</option>
-                                                <?php department();?>
+                                            <select class="custom-select" name="president" id="president" >
+                                                <option selected="">Choose president...</option>
+                                                <?php president();?>
                                             </select>
                                         </div><!--end form-group--> 
 
                                         <div class="form-group bootstrap-select-1">
                                             <label for="useremail"><b>Governor</b></label>
-                                            <select class="custom-select" name="department" id="department" >
-                                                <option selected="">Select from list...</option>
-                                                <?php department();?>
+                                            <select class="custom-select" name="governor" id="governor" >
+                                                <option selected="">Choose governor...</option>
+                                                <?php governor();?>
                                             </select>
                                         </div><!--end form-group-->
 
                                         <div class="form-group bootstrap-select-1">
                                             <label for="useremail"><b>Senator</b></label>
-                                            <select class="custom-select" name="department" id="department" >
-                                                <option selected="">Select from list...</option>
-                                                <?php department();?>
+                                            <select class="custom-select" name="senator" id="senator" >
+                                                <option selected="">Choose senator...</option>
+                                                <?php senator();?>
                                             </select>
                                         </div><!--end form-group-->
 
                                         <div class="form-group bootstrap-select-1">
                                             <label for="useremail"><b>Member of Parliament</b></label>
-                                            <select class="custom-select" name="department" id="department" >
-                                                <option selected="">Select from list...</option>
-                                                <?php department();?>
+                                            <select class="custom-select" name="mp" id="mp" >
+                                                <option selected="">Choose MP...</option>
+                                                <?php mp();?>
                                             </select>
                                         </div><!--end form-group-->
 
                                         <div class="form-group bootstrap-select-1">
                                             <label for="useremail"><b>Member of County Assembly</b></label>
-                                            <select class="custom-select" name="department" id="department" >
-                                                <option selected="">Select from list...</option>
-                                                <?php department();?>
+                                            <select class="custom-select" name="mca" id="mca" >
+                                                <option selected="">Choose MCA...</option>
+                                                <?php mca();?>
                                             </select>
                                         </div><!--end form-group--> 
 
                                         <div class="form-group bootstrap-select-1">
                                             <label for="useremail"><b>Women Representative</b></label>
-                                            <select class="custom-select" name="department" id="department" >
-                                                <option selected="">Select from list...</option>
-                                                <?php department();?>
+                                            <select class="custom-select" name="womenrep" id="womenrep" >
+                                                <option selected="">Choose Women Rep....</option>
+                                                <?php womenrep();?>
                                             </select>
                                         </div><!--end form-group-->          
                                               
