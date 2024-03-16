@@ -55,7 +55,7 @@ $id_number = $_SESSION['id_number'];
                                     </div> <!--end auth-logo-text-->  
     
                                     
-                                    <form class="form-horizontal auth-form my-4" action="helpers/sindex.php" method="post" autocomplete="off">
+                                    <form class="form-horizontal auth-form my-4" action="helpers/verify.php" method="post" autocomplete="off">
             
                                         <div class="form-group">
                                             
@@ -63,7 +63,7 @@ $id_number = $_SESSION['id_number'];
                                                 <span class="auth-form-icon">
                                                     <i class="dripicons-user"></i> 
                                                 </span>
-                                                <input type="text" class="form-control" id="staff_id" name="id_number" minlength="3" maxlength="15" placeholder="Enter OTP Code..." required >
+                                                <input type="number" class="form-control" id="staff_id" name="id_number" minlength="3" maxlength="15" placeholder="Enter OTP Code..." required >
                                             </div>                                    
                                         </div><!--end form-group--> 
             
