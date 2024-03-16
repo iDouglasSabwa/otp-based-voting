@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
       CURLOPT_TIMEOUT => 30,
       CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
       CURLOPT_CUSTOMREQUEST => "POST",
-      CURLOPT_POSTFIELDS => "userid=sabatiaeye&password=dC95pyTe&mobile=254791323200&msg=Hi $voter_name, your Multifactor Voting System code is: $otp_code\n\nTumutumu Girls High School\n\n&senderid=SABATIA_EYE&msgType=text&duplicatecheck=true&output=json&sendMethod=quick",
+      CURLOPT_POSTFIELDS => "userid=sabatiaeye&password=dC95pyTe&mobile=254791323200&msg=Hi $voter_name, your Multifactor Voting System OTP code is: $otp_code\n\nTumutumu Girls High School\n\n&senderid=SABATIA_EYE&msgType=text&duplicatecheck=true&output=json&sendMethod=quick",
       CURLOPT_HTTPHEADER => array(
              "apikey: 3bf793fcc682e65525ca56ac018d0a9fe9304713",
              "cache-control: no-cache",

@@ -53,7 +53,7 @@ session_destroy();
                                                 <span class="auth-form-icon">
                                                     <i class="dripicons-user"></i> 
                                                 </span>
-                                                <input type="number" class="form-control" id="staff_id" name="id_number" minlength="3" maxlength="15" placeholder="Type voter ID number here..." required >
+                                                <input type="number" class="form-control" id="id_number" name="id_number" minlength="3" maxlength="15" placeholder="Type voter ID number here..." required >
                                             </div>                                    
                                         </div><!--end form-group--> 
             

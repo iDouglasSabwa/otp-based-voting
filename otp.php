@@ -51,7 +51,7 @@ $id_number = $_SESSION['id_number'];
                                         <h4 class="mt-0 mb-1 mt-4 text-truncate" style="font-family: 'Poppins', sans-serif;line-height: 2.0;color: #0B59A4;"> OTP Verification</h4>
                                        <!--  <p class="text-muted mb-0">Please sign in to continue</p>  -->
                                      
-                                        <p class="text-muted mb-1" style="font-family: 'Poppins', sans-serif;">Made by Wanja and Njeru</p>   
+                                        <p class="text-muted mb-1" style="font-family: 'Poppins', sans-serif;">Code sent to your phone via SMS</p>   
                                     </div> <!--end auth-logo-text-->  
     
                                     
@@ -63,7 +63,7 @@ $id_number = $_SESSION['id_number'];
                                                 <span class="auth-form-icon">
                                                     <i class="dripicons-user"></i> 
                                                 </span>
-                                                <input type="number" class="form-control" id="staff_id" name="id_number" minlength="3" maxlength="15" placeholder="Enter OTP Code..." required >
+                                                <input type="number" class="form-control" id="otp_code" name="otp_code" minlength="3" maxlength="15" placeholder="Enter OTP Code..." required >
                                             </div>                                    
                                         </div><!--end form-group--> 
             
