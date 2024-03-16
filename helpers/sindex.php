@@ -84,8 +84,7 @@ if (isset($_POST['submit'])) {
 		 
 
 	} else {
-		# Populate log file...
-		
+		# If ID number is incorrect...		
 
        echo "<h2 style='text-align:center;margin-top:20%;color:red;font-family:Century Gothic'>Invalid voter details </h2>";
        echo "<script>
