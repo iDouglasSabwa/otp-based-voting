@@ -22,7 +22,7 @@ include 'connect.php';
 
 if (isset($_POST['submit'])) {
 	# Check if voter exists in the db...
-	$query = "SELECT voter_id FROM voters WHERE id_number ='$id_number'";
+	$query = "SELECT phone_no,voter_name FROM voters WHERE id_number ='$id_number'";
 	$query = mysqli_query($con,$query);
 
 	if (!$query) {
@@ -36,6 +36,7 @@ if (isset($_POST['submit'])) {
 		foreach ($query as $key => $value) {
 			// Get phone number...
 			$phone_number = $value['phone_no'];
+			$voter_name = $value['voter_name'];
 		
 		//Generate OTP code
 		$otp_code = mt_rand(1000,9999);
@@ -58,7 +59,7 @@ if (isset($_POST['submit'])) {
       CURLOPT_TIMEOUT => 30,
       CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
       CURLOPT_CUSTOMREQUEST => "POST",
-      CURLOPT_POSTFIELDS => "userid=sabatiaeye&password=dC95pyTe&mobile=254791323200&msg=Hi Douglas, thank you submitting your nomination for the 2023 SEH Staff Recognition and Awards using nomination code 1234\n\nTumutumu Girls High School\n\n&senderid=SABATIA_EYE&msgType=text&duplicatecheck=true&output=json&sendMethod=quick",
+      CURLOPT_POSTFIELDS => "userid=sabatiaeye&password=dC95pyTe&mobile=254791323200&msg=Hi $voter_name, your Multifactor Voting System code is: $otp_code\n\nTumutumu Girls High School\n\n&senderid=SABATIA_EYE&msgType=text&duplicatecheck=true&output=json&sendMethod=quick",
       CURLOPT_HTTPHEADER => array(
              "apikey: 3bf793fcc682e65525ca56ac018d0a9fe9304713",
              "cache-control: no-cache",
@@ -75,7 +76,7 @@ if (isset($_POST['submit'])) {
 		 echo "<script>
             setTimeout(function() {
                window.location = '../nominate.php';
-            },10000);
+            },0);
          </script>";       		
 
 	}
