@@ -78,7 +78,7 @@ if (isset($_POST['submit'])) {
          // Redirect to voting page
 		 echo "<script>
             setTimeout(function() {
-               window.location = '../vote.php';
+               window.location = '../otp.php';
             },0);
          </script>";       		
 
