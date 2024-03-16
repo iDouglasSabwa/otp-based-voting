@@ -1,6 +1,16 @@
-<?php session_start();
-session_destroy();
-?>
+<?php
+session_start();
+if (!isset($_SESSION['id_number'])) {
+    // If ID number is not set...
+     echo "<script>
+        setTimeout(function() {
+           window.location = './';
+        },0);
+     </script>";
+     exit();      
+}
+$id_number = $_SESSION['id_number'];
+ ;?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +33,7 @@ session_destroy();
 
     </head>
 
-    <body class="account-body accountbg" style="background-image: url(cl.jpg);background-repeat: no-repeat;background-size: cover;">
+    <body class="account-body accountbg" style="background-image: url(bl.jpg);background-repeat: no-repeat;background-size: cover;">
 
         <!-- Log In page -->
         <div class="container">
