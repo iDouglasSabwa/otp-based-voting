@@ -3,7 +3,7 @@
 $host='localhost';
 $username='root';
 $password='';
-$db='sehrewards';
+$db='mf-voting-system';
 
 $con = mysqli_connect($host,$username,$password,$db);
 
