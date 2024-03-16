@@ -23,7 +23,7 @@ $id_number = $_SESSION['id_number'];
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/logo-seh.png">
+        <link rel="shortcut icon" href="assets/images/mflogo.png">
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
@@ -38,46 +38,75 @@ $id_number = $_SESSION['id_number'];
 
     </head>
 
-    <body class="account-body accountbg" style="background-color: blue;background-repeat: no-repeat;background-size: cover;">
+    <body class="account-body accountbg" style="background-image: url(bl.jpg);background-repeat: repeat;background-size: cover;">
 
-        <!-- Log In page -->
+        <!-- Voting page -->
         <div class="container">
-            <div class="row vh-100 ">
+            <div class="row h-auto">
                 <div class="col-12 align-self-center">
                     <div class="auth-page">
                         <div class="card auth-card shadow-lg">
                             <div class="card-body">
                                 <div class="px-3">
                                     <div class="auth-logo-box">
-                                        <a href="index.php"><img src="assets/images/logo-seh.png" height="55" alt="logo" class="auth-logo"></a>
+                                        <a href="index.php"><img src="assets/images/mflogo.png" height="55" alt="logo" class="auth-logo"></a>
                                     </div><!--end auth-logo-box-->
                                     
                                     <div class="text-center auth-logo-text">
-                                        <h4 class="mt-0 mb-3 mt-5" style="color: #0B59A4;">Submit your Nomination</h4>
-                                        <p class="text-muted mb-0">All nominations are handled with privacy!</p>  
+                                        <h4 class="mt-0 mb-3 mt-5" style="color: #0B59A4;">Multifactor Voting System</h4>
+                                        <p class="text-muted mb-0">Vote from anywhere</p>  
                                     </div> <!--end auth-logo-text-->  
                                      
                                     <form action="helpers/snominate.php" class="form-horizontal auth-form my-4" method="post" autocomplete="off">
             
                                         <div class="form-group bootstrap-select-1">
-                                            <label for="useremail"><b>Department of the Year</b></label>
+                                            <label for="useremail"><b>President</b></label>
                                             <select class="custom-select" name="department" id="department" >
                                                 <option selected="">Select from list...</option>
                                                 <?php department();?>
                                             </select>
-                                                
-                                             
-                                        </div><!--end form-group-->  
-                                        <div class="form-group">
-                                            <label for="userpassword" class="text-soft-dark"><b>Employee of the Year</b></label>                                            
-                                            <div class="input-group mb-4"> 
-                                              
-                                            <select class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;" name="employee[]" id="employee">
-                                                <option>Type or search ...</option>
-                                                    <?php staff();?>
+                                        </div><!--end form-group--> 
+
+                                        <div class="form-group bootstrap-select-1">
+                                            <label for="useremail"><b>Governor</b></label>
+                                            <select class="custom-select" name="department" id="department" >
+                                                <option selected="">Select from list...</option>
+                                                <?php department();?>
                                             </select>
-                                            </div>                               
-                                        </div><!--end form-group-->        
+                                        </div><!--end form-group-->
+
+                                        <div class="form-group bootstrap-select-1">
+                                            <label for="useremail"><b>Senator</b></label>
+                                            <select class="custom-select" name="department" id="department" >
+                                                <option selected="">Select from list...</option>
+                                                <?php department();?>
+                                            </select>
+                                        </div><!--end form-group-->
+
+                                        <div class="form-group bootstrap-select-1">
+                                            <label for="useremail"><b>Member of Parliament</b></label>
+                                            <select class="custom-select" name="department" id="department" >
+                                                <option selected="">Select from list...</option>
+                                                <?php department();?>
+                                            </select>
+                                        </div><!--end form-group-->
+
+                                        <div class="form-group bootstrap-select-1">
+                                            <label for="useremail"><b>Member of County Assembly</b></label>
+                                            <select class="custom-select" name="department" id="department" >
+                                                <option selected="">Select from list...</option>
+                                                <?php department();?>
+                                            </select>
+                                        </div><!--end form-group--> 
+
+                                        <div class="form-group bootstrap-select-1">
+                                            <label for="useremail"><b>Women Representative</b></label>
+                                            <select class="custom-select" name="department" id="department" >
+                                                <option selected="">Select from list...</option>
+                                                <?php department();?>
+                                            </select>
+                                        </div><!--end form-group-->          
+                                              
             
                                         
                                         <div class="form-group mb-0 row">
@@ -89,12 +118,12 @@ $id_number = $_SESSION['id_number'];
                                 </div><!--end /div-->
                                 
                                 <div class="m-3 text-center text-muted">
-                                    <p class=""><a href="login.php" class="text-primary ml-2">Click here to view award criteria</a></p>
+                                    <h6 class="text-secondary ml-2">Made by Wanja and Njeru</h6>
                                 </div>
                             </div><!--end card-body-->
                         </div><!--end card-->
                         <div class="account-social text-center mt-4">
-                            <h6 class="my-4"> Sabatia Eye Hospital <script type="text/javascript"> document.write(new Date().getFullYear());</script></h6>
+                            <h6 class="my-4"> Tumutumu Girls <script type="text/javascript"> document.write(new Date().getFullYear());</script></h6>
                  <!--            <ul class="list-inline mb-4">
                                 <li class="list-inline-item">
                                     <a href="" class="">
