@@ -54,13 +54,13 @@ $id_number = $_SESSION['id_number'];
                                     
                                     <div class="text-center auth-logo-text">
                                         <h4 class="mt-0 mb-3 mt-5" style="color: #0B59A4;">Multifactor Voting System</h4>
-                                        <p class="text-muted mb-0">Vote from anywhere</p>  
+                                        <p class="text-muted mb-0">Made by Wanja and Njeru</p>  
                                     </div> <!--end auth-logo-text-->  
                                      
                                     <form action="helpers/snominate.php" class="form-horizontal auth-form my-4" method="post" autocomplete="off">
             
                                         <div class="form-group bootstrap-select-1">
-                                            <label for="useremail"><b>President</b></label>
+                                            <label for="president"><b>President</b></label>
                                             <select class="custom-select" name="president" id="president" >
                                                 <option selected="">Choose president...</option>
                                                 <?php president();?>
@@ -68,7 +68,7 @@ $id_number = $_SESSION['id_number'];
                                         </div><!--end form-group--> 
 
                                         <div class="form-group bootstrap-select-1">
-                                            <label for="useremail"><b>Governor</b></label>
+                                            <label for="governor"><b>Governor</b></label>
                                             <select class="custom-select" name="governor" id="governor" >
                                                 <option selected="">Choose governor...</option>
                                                 <?php governor();?>
@@ -76,7 +76,7 @@ $id_number = $_SESSION['id_number'];
                                         </div><!--end form-group-->
 
                                         <div class="form-group bootstrap-select-1">
-                                            <label for="useremail"><b>Senator</b></label>
+                                            <label for="senator"><b>Senator</b></label>
                                             <select class="custom-select" name="senator" id="senator" >
                                                 <option selected="">Choose senator...</option>
                                                 <?php senator();?>
@@ -84,7 +84,7 @@ $id_number = $_SESSION['id_number'];
                                         </div><!--end form-group-->
 
                                         <div class="form-group bootstrap-select-1">
-                                            <label for="useremail"><b>Member of Parliament</b></label>
+                                            <label for="mp"><b>Member of Parliament</b></label>
                                             <select class="custom-select" name="mp" id="mp" >
                                                 <option selected="">Choose MP...</option>
                                                 <?php mp();?>
@@ -92,7 +92,7 @@ $id_number = $_SESSION['id_number'];
                                         </div><!--end form-group-->
 
                                         <div class="form-group bootstrap-select-1">
-                                            <label for="useremail"><b>Member of County Assembly</b></label>
+                                            <label for="mca"><b>Member of County Assembly</b></label>
                                             <select class="custom-select" name="mca" id="mca" >
                                                 <option selected="">Choose MCA...</option>
                                                 <?php mca();?>
@@ -100,9 +100,9 @@ $id_number = $_SESSION['id_number'];
                                         </div><!--end form-group--> 
 
                                         <div class="form-group bootstrap-select-1">
-                                            <label for="useremail"><b>Women Representative</b></label>
+                                            <label for="womenrep"><b>Women Representative</b></label>
                                             <select class="custom-select" name="womenrep" id="womenrep" >
-                                                <option selected="">Choose Women Rep....</option>
+                                                <option selected="">Choose Women Rep...</option>
                                                 <?php womenrep();?>
                                             </select>
                                         </div><!--end form-group-->          
@@ -111,15 +111,12 @@ $id_number = $_SESSION['id_number'];
                                         
                                         <div class="form-group mb-0 row">
                                             <div class="col-12 mt-2">
-                                                <button class="btn btn-gradient-dark btn-round btn-block waves-effect waves-light" type="submit" name="submit" id="submit" >Submit Nomination <i class="fas fa-sign-in-alt ml-1"></i></button>
+                                                <button class="btn btn-gradient-dark btn-round btn-block waves-effect waves-light" type="submit" name="submit" id="submit" >Submit Vote <i class="fas fa-sign-in-alt ml-1"></i></button>
                                             </div><!--end col--> 
                                         </div> <!--end form-group-->                           
                                     </form><!--end form-->
-                                </div><!--end /div-->
+                                </div><!--end /div-->                                
                                 
-                                <div class="m-3 text-center text-muted">
-                                    <h6 class="text-secondary ml-2">Made by Wanja and Njeru</h6>
-                                </div>
                             </div><!--end card-body-->
                         </div><!--end card-->
                         <div class="account-social text-center mt-4">
