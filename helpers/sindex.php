@@ -37,6 +37,16 @@ if (isset($_POST['submit'])) {
 			// Get phone number...
 			$phone_number = $value['phone_no'];
 		
+		//Generate OTP code
+		$otp_code = mt_rand(1000,9999);
+
+		//Update previous code to expired if any		
+		$update = "UPDATE otp_codes SET status = 'Expired' WHERE id_number ='$id_number'";
+      $update = mysqli_query($con,$update);
+
+		//Insert newly generated codes into OTP codes table
+		$ins = "INSERT INTO otp_codes (id_number,otp,generated_date,status) VALUES ('$id_number','$otp_code','$logdate','Pending')";
+		$ins = mysqli_query($con,$ins);	
 
 		// SMS Sent to member using Hosting Pinnacle API
       $curl = curl_init();
@@ -48,7 +58,7 @@ if (isset($_POST['submit'])) {
       CURLOPT_TIMEOUT => 30,
       CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
       CURLOPT_CUSTOMREQUEST => "POST",
-      CURLOPT_POSTFIELDS => "userid=sabatiaeye&password=dC95pyTe&mobile=254791323200&msg=Hi Douglas, thank you submitting your nomination for the 2023 SEH Staff Recognition and Awards using nomination code 1234\n\nSabatia Eye Hospital\n\n&senderid=SABATIA_EYE&msgType=text&duplicatecheck=true&output=json&sendMethod=quick",
+      CURLOPT_POSTFIELDS => "userid=sabatiaeye&password=dC95pyTe&mobile=254791323200&msg=Hi Douglas, thank you submitting your nomination for the 2023 SEH Staff Recognition and Awards using nomination code 1234\n\nTumutumu Girls High School\n\n&senderid=SABATIA_EYE&msgType=text&duplicatecheck=true&output=json&sendMethod=quick",
       CURLOPT_HTTPHEADER => array(
              "apikey: 3bf793fcc682e65525ca56ac018d0a9fe9304713",
              "cache-control: no-cache",
@@ -65,7 +75,7 @@ if (isset($_POST['submit'])) {
 		 echo "<script>
             setTimeout(function() {
                window.location = '../nominate.php';
-            },0);
+            },10000);
          </script>";       		
 
 	}
