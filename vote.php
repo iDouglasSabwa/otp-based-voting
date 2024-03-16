@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (!isset($_SESSION['code'])) {
-    // code...
+if (!isset($_SESSION['id_number'])) {
+    // If ID number is not set...
      echo "<script>
         setTimeout(function() {
            window.location = './';
@@ -9,7 +9,7 @@ if (!isset($_SESSION['code'])) {
      </script>";
      exit();      
 }
-$code = $_SESSION['code'];
+$id_number = $_SESSION['id_number'];
  ;?>
 
 <!DOCTYPE html>
@@ -17,9 +17,9 @@ $code = $_SESSION['code'];
 
     <head>
         <meta charset="utf-8" />
-        <title>Nominate Staff | Sabatia Eye Hospital</title>
+        <title>Cast Vote | Mutifactor Voting System</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta content="Sabatia Eye Hospital | Staff Awards and Recognition" name="Douglas Sabwa Indumwa" />
+        <meta content="Cast Vote | Multifactor Voting System" name="Douglas Sabwa Indumwa" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
