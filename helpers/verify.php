@@ -15,6 +15,8 @@ function clean($data)
 $otp_code = clean($otp_code);
 session_start();
 $id_number = $_SESSION['id_number'];
+$_SESSION['otp_code'] = $otp_code;
+
 
 //Database connection file
 include 'connect.php';
@@ -32,9 +34,6 @@ if (isset($_POST['submit'])) {
 	//If details match 
 	if (mysqli_num_rows($query)>0) {
 
-		//Update the OTP code to expired	
-		$update = "UPDATE otp_codes SET status = 'Expired' WHERE id_number ='$id_number'";
-        $update = mysqli_query($con,$update);
 
          // Redirect to voting page
 		 echo "<script>
