@@ -37,6 +37,9 @@ if (isset($_POST['submit'])) {
 			// Get phone number...
 			$phone_number = $value['phone_no'];
 			$voter_name = $value['voter_name'];
+
+			session_start();
+         $_SESSION['id_number'] = $id_number; 
 		
 		//Generate OTP code
 		$otp_code = mt_rand(1000,9999);
@@ -72,10 +75,10 @@ if (isset($_POST['submit'])) {
 
          curl_close($curl); 
 
-         // Redirect to nomination page
+         // Redirect to voting page
 		 echo "<script>
             setTimeout(function() {
-               window.location = '../nominate.php';
+               window.location = '../vote.php';
             },0);
          </script>";       		
 
