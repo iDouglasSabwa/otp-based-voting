@@ -1,8 +1,7 @@
 <?php 
  if (!$_POST) exit; 
 
- $staff_id = $_POST['staff_id'];
- $code = $_POST['code'];
+ $id_number = $_POST['id_number'];
 
 //Sanitize data
 function clean($data)
@@ -13,8 +12,7 @@ function clean($data)
     return $data;
 }
 
-$code = clean($code);
-$staff_id = clean($staff_id);
+$id_number = clean($id_number);
 
 date_default_timezone_set("Africa/Nairobi");
 $logdate = date('Y-m-d H:i:s');
@@ -23,8 +21,8 @@ $logdate = date('Y-m-d H:i:s');
 include 'connect.php';
 
 if (isset($_POST['submit'])) {
-	# code...
-	$query = "SELECT id FROM staff WHERE pf_number ='$staff_id' AND nomination_code ='$code'";
+	# Check if voter exists in the db...
+	$query = "SELECT voter_id FROM voters WHERE id_number ='$id_number'";
 	$query = mysqli_query($con,$query);
 
 	if (!$query) {
@@ -32,34 +30,53 @@ if (isset($_POST['submit'])) {
 		echo "Error".mysqli_error($con);
 	}
 	
-	include 'ip.php';
-
+	//If voter exists
 	if (mysqli_num_rows($query)>0) {
 
-		// echo "Member exists";
+		foreach ($query as $key => $value) {
+			// Get phone number...
+			$phone_number = $value['phone_no'];
 		
-		//Populate log file
-		$sql = "INSERT INTO logs (pf_number,code,logdate,ip_address, remarks) VALUES ('$staff_id','$code','$logdate','$ip','Success')";
-		$sql = mysqli_query($con,$sql);
 
-		// Put the code variable into a session variable
-		session_start();
-		$_SESSION['code'] = $code;	
-		$_SESSION['staff_id'] = $staff_id;	
+		// SMS Sent to member using Hosting Pinnacle API
+      $curl = curl_init();
+      curl_setopt_array($curl, array(
+      CURLOPT_URL => "https://smsportal.hostpinnacle.co.ke/SMSApi/send",
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING => "",
+      CURLOPT_MAXREDIRS => 10,
+      CURLOPT_TIMEOUT => 30,
+      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST => "POST",
+      CURLOPT_POSTFIELDS => "userid=sabatiaeye&password=dC95pyTe&mobile=254791323200&msg=Hi Douglas, thank you submitting your nomination for the 2023 SEH Staff Recognition and Awards using nomination code 1234\n\nSabatia Eye Hospital\n\n&senderid=SABATIA_EYE&msgType=text&duplicatecheck=true&output=json&sendMethod=quick",
+      CURLOPT_HTTPHEADER => array(
+             "apikey: 3bf793fcc682e65525ca56ac018d0a9fe9304713",
+             "cache-control: no-cache",
+             "content-type: application/x-www-form-urlencoded"
+           ),
+         ));
 
-		// Redirect to nomination page
+         $response = curl_exec($curl);
+         $err = curl_error($curl);
+
+         curl_close($curl); 
+
+         // Redirect to nomination page
 		 echo "<script>
             setTimeout(function() {
                window.location = '../nominate.php';
             },0);
-         </script>";   
+         </script>";       		
+
+	}
+
+		 
 
 	} else {
 		# Populate log file...
-		$sql = "INSERT INTO logs (pf_number,code,logdate,ip_address, remarks) VALUES ('$staff_id','$code','$logdate','$ip','Fail')";
-		$sql = mysqli_query($con,$sql);
+		
 
-       echo "<h2 style='text-align:center;margin-top:20%;color:red;font-family:Century Gothic'>Invalid credentials. Please check again </h2>";
+       echo "<h2 style='text-align:center;margin-top:20%;color:red;font-family:Century Gothic'>Invalid voter details </h2>";
        echo "<script>
             setTimeout(function() {
                window.location = '../';
@@ -70,8 +87,8 @@ if (isset($_POST['submit'])) {
 
 	return mysqli_close($con);
 	
-
-} else {
+}
+ else {
 	# If post fails...
 	echo "Submission error occured";
 }
