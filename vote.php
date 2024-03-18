@@ -57,7 +57,7 @@ $id_number = $_SESSION['id_number'];
                                         <p class="text-muted mb-0">Made by Wanja and Njeru</p>  
                                     </div> <!--end auth-logo-text-->  
                                      
-                                    <form action="helpers/snominate.php" class="form-horizontal auth-form my-4" method="post" autocomplete="off">
+                                    <form action="helpers/svote.php" class="form-horizontal auth-form my-4" method="post" autocomplete="off">
             
                                         <div class="form-group bootstrap-select-1">
                                             <label for="president"><b>President</b></label>
