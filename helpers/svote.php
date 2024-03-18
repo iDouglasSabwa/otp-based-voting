@@ -53,24 +53,26 @@ if (isset($_POST['submit'])) {
 
 	} else {
 		# Insert into the voting file...
-		$sql = "INSERT INTO voting_table (id_number,president,governor,senator,mca,mp,women_rep,otp,voting_date) VALUES ('$id_number','$president','$governor','$senator','$mca','$mp','$women_rep','$otp_code','$logdate')";
+		$sql = "INSERT INTO voting_table (id_number,president,governor,senator,mca,mp,women_rep,otp,voting_date) VALUES ('$id_number','$president','$governor','$senator','$mca','$mp','$womenrep','$otp_code','$logdate')";
 		$sql = mysqli_query($con,$sql);
 
 		if (!$sql) {
 			// code...
 			echo "Error".mysqli_error($con);
-		}
+		} else {
 
 		echo "<h2 style='text-align:center;margin-top:20%;color:green;font-family:Century Gothic'>Succesfully voted... </h2>";
+
+		//Update the OTP code to expired	
+		$update = "UPDATE otp_codes SET status = 'Expired' WHERE id_number ='$id_number'";
+        $update = mysqli_query($con,$update);
 		
 		echo "<script>
             setTimeout(function() {
                window.location = '../';
             },2000);
-         </script>";  
-
-     
-
+         </script>";
+     	};  
 	}
 
 	return mysqli_close($con);
